@@ -1,0 +1,24 @@
+{
+  "name": "webpack-react-multipage",
+  "version": "1.0.0",
+  "description": "基于webpack的react多页面项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiaochunxiao/webpack-react-multipage.git"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "multipage"
+  ],
+  "author": "jiaochunxiao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiaochunxiao/webpack-react-multipage/issues"
+  },
+  "homepage": "https://github.com/jiaochunxiao/webpack-react-multipage#readme"
+}
