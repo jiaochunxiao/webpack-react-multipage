@@ -3,7 +3,7 @@ import {render} from 'react-dom'
 import {observable, computed} from 'mobx'
 import {Provider, observer} from 'mobx-react'
 
-import '../less/index.less'
+import '../../less/index.less'
 
 class Todo {
     id = Math.random();

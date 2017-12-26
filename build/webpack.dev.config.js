@@ -8,6 +8,11 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.config');
 
 const devConfig = {
+    entry: {
+        vendor: [
+            "react", 'react-dom', 'mobx', 'mobx-react', 'react-router'
+        ]
+    },
     output: {
         publicPath: '',
         path: path.resolve(__dirname, '../dist'),
@@ -15,13 +20,12 @@ const devConfig = {
     },
     devtool: 'source-map',
     devServer: {
-        contentBase: './',
+        contentBase: './dist',
         port: 3000,
         watchContentBase: true,
         proxy: {}
     }
 }
-console.log(merge(baseConfig, devConfig));
  module.exports = merge(
      baseConfig,
      devConfig

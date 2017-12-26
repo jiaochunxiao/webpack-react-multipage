@@ -1,8 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractLess = new ExtractTextPlugin('css/[name].css');
+
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 const babelConf = require('./babel.config');
 
