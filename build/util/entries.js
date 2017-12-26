@@ -1,6 +1,6 @@
 /**
- * @
- * @author jiaochunxiao
+ * @file webpack base config
+ * @author jiaochunxiao(jiaochunxiao2008@163.com)
  */
 const path = require('path');
 const glob = require('glob');

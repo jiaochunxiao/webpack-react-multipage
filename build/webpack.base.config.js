@@ -9,11 +9,6 @@ const babelConf = require('./babel.config');
 const multi = require('./util/entries');
 module.exports = {
     entry: multi.entries,
-    output: {
-        path: path.join(__dirname, '../dist'),
-        publicPath: '/',
-        filename: 'js/[name].js'
-    },
     module: {
         rules: [
             {
@@ -60,10 +55,5 @@ module.exports = {
     plugins: [
         ...multi.webpackPlugins,
         extractLess
-    ],
-    devServer: {
-        contentBase: './',
-        host: 'localhost',
-        port: '3000'
-    }
+    ]
 }
