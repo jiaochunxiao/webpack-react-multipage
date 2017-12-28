@@ -57,6 +57,11 @@ module.exports = {
         extensions: ['.js', '.jsx', '.less', '.css']
     },
     plugins: [
+        new CommonsChunkPlugin({
+            name: ['vendor'],
+            filename: 'js/[name].js',
+            inChunks: Infinity
+        }),
         ...multi.webpackPlugins,
         extractLess
     ]

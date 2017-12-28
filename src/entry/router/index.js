@@ -2,20 +2,22 @@ import React from 'react';
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import Auth from './auth';
 const App = () => (
-    <Router>
+    <Router basename='/router.html'>
         <div>
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/topics">Topics</Link></li>
+                <li><Link to='/auth'>Auth</Link></li>
             </ul>
 
             <hr />
-
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/topics" component={Topics} />
+            <Route path="/auth" component={Auth} />
         </div>
     </Router>
 )

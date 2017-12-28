@@ -4,7 +4,7 @@ module.exports = {
     ],
     plugins: [
         // "transform-runtime",
-        // "transform-object-rest-spread",
+        "transform-object-rest-spread",
         "transform-decorators-legacy",
         "transform-class-properties"
     ]
