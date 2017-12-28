@@ -1,5 +1,5 @@
 ## webpack multipage
-
+本项目旨在构建多页面工程，项目内代码为个人学习react及react相关框架实践。
 
 ### 有意思的事
 
