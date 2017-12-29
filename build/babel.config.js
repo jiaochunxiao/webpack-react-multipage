@@ -1,9 +1,16 @@
 module.exports = {
     presets: [
-        ['es2015', {modules: false}]
+        ['es2015', {modules: false}],
+        "env",
+        "stage-0"
     ],
     plugins: [
         // "transform-runtime",
+        ['import', {
+            "libraryName": 'antd',
+            "libraryDirectory": 'lib',
+            "style": true
+        }],
         "transform-object-rest-spread",
         "transform-decorators-legacy",
         "transform-class-properties"

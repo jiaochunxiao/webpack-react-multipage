@@ -3,6 +3,12 @@ import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Auth from './auth';
+// const Auth = (location, callback) => {
+//     require.ensure([], require => {
+//       callback(null, require('./auth'))
+//     }, 'auth')  
+//   }
+  
 const App = () => (
     <Router basename='/router.html'>
         <div>
@@ -12,7 +18,6 @@ const App = () => (
                 <li><Link to="/topics">Topics</Link></li>
                 <li><Link to='/auth'>Auth</Link></li>
             </ul>
-
             <hr />
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
