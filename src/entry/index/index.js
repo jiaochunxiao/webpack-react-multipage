@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom'
-import {observable, computed} from 'mobx'
+import {observable, computed, action} from 'mobx'
 import {Provider, observer} from 'mobx-react'
 
 import '../../less/index.less'
@@ -18,6 +18,10 @@ class TodoList {
     @observable todos = [];
     @computed get unfinishedTodoCount() {
         return this.todos.filter(todo => !todo.finished).length;
+    }
+    @action
+    addTodo(title) {
+        this.todos.push(new Todo(title));
     }
 }
 
@@ -51,12 +55,14 @@ render(
     document.getElementById('app')
 );
 
-store.todos.push(
-    new Todo("Get Coffee"),
-    new Todo("Write simpler code")
-);
+store.addTodo('Get Coffee');
+store.addTodo('Write simpler code');
+
 store.todos[0].finished = true;
 
-// For Eval button
+setTimeout(() => {
+    store.addTodo('Get a cookie as well');
+}, 2000);
+
 window.store = store;
   

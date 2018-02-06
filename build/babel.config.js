@@ -5,7 +5,6 @@ module.exports = {
         "stage-0"
     ],
     plugins: [
-        // "transform-runtime",
         ['import', {
             "libraryName": 'antd',
             "libraryDirectory": 'lib',
