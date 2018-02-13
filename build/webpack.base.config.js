@@ -57,6 +57,8 @@ module.exports = {
         extensions: ['.js', '.jsx', '.less', '.css']
     },
     plugins: [
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.ModuleConcatenationPlugin(),
         new CommonsChunkPlugin({
             name: ['vendor'],
             filename: 'js/[name].js',

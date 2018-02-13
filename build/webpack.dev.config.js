@@ -23,7 +23,15 @@ const devConfig = {
         contentBase: './dist',
         port: 3000,
         watchContentBase: true,
-        proxy: {}
+        proxy: {},
+        stats: {
+            hash: false,
+            children: false,
+            modules: false,
+            chunkOrigin: false,
+            source: false,
+            chunksSort: false
+        }
     }
 }
  module.exports = merge(
