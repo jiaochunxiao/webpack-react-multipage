@@ -50,15 +50,31 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.less', '.css']
     },
+    // plugins: [
+    //     new BundleAnalyzerPlugin(),
+    //     new webpack.NoEmitOnErrorsPlugin(),
+    //     new webpack.optimize.ModuleConcatenationPlugin(),
+    //     new CommonsChunkPlugin({
+    //         name: ['vendor'],
+    //         filename: 'js/[name].js',
+    //         inChunks: Infinity
+    //     }),
+    //     ...multi.webpackPlugins,
+    //     extractLess
+    // ],
     plugins: [
-        new BundleAnalyzerPlugin(),
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('../dist/static/vendor-manifest.json')
+        }),
+        // new BundleAnalyzerPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.ModuleConcatenationPlugin(),
-        new CommonsChunkPlugin({
-            name: ['vendor'],
-            filename: 'js/[name].js',
-            inChunks: Infinity
-        }),
+        // new CommonsChunkPlugin({
+        //     name: ['vendor'],
+        //     filename: 'js/[name].js',
+        //     inChunks: Infinity
+        // }),
         ...multi.webpackPlugins,
         extractLess
     ]

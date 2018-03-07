@@ -8,11 +8,11 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.config');
 
 const devConfig = {
-    entry: {
-        vendor: [
-            "react", 'react-dom', 'mobx', 'mobx-react', 'react-router'
-        ]
-    },
+    // entry: {
+    //     vendor: [
+    //         "react", 'react-dom', 'mobx', 'mobx-react', 'react-router'
+    //     ]
+    // },
     output: {
         publicPath: '',
         path: path.resolve(__dirname, '../dist'),

@@ -25,15 +25,11 @@ glob
         webpackPlugins.push(
             new HtmlWebpackPlugin({
                 filename: filename.split('/')[0] + '.html',
-                chunks: ['vendor', filename],
+                chunks: [filename],
+                title: 'test',
                 minChunks: Infinity,
                 chunksSortMode: 'manual',
-                // chunksSortMode: (c1, c2) => {
-                //     let orders = ['vendor', 'app'];
-                //     let o1 = orders.indexOf(c1.names[0]);
-                //     let o2 = orders.indexOf(c2.names[0]);
-                //     return o1 - o2;
-                // },
+                inject: true,
                 template: 'index.html'
             })
         )
