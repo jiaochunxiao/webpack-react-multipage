@@ -19,20 +19,20 @@ const devConfig = {
         filename: 'js/[name].js'
     },
     devtool: 'source-map',
-    devServer: {
-        contentBase: './dist',
-        port: 3000,
-        watchContentBase: true,
-        proxy: {},
-        stats: {
-            hash: false,
-            children: false,
-            modules: false,
-            chunkOrigin: false,
-            source: false,
-            chunksSort: false
-        }
-    }
+    // devServer: {
+    //     contentBase: './dist',
+    //     port: 3000,
+    //     watchContentBase: true,
+    //     proxy: {},
+    //     stats: {
+    //         hash: false,
+    //         children: false,
+    //         modules: false,
+    //         chunkOrigin: false,
+    //         source: false,
+    //         chunksSort: false
+    //     }
+    // }
 }
  module.exports = merge(
      baseConfig,

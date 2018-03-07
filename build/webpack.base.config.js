@@ -8,6 +8,8 @@ const extractLess = new ExtractTextPlugin('css/[name].css');
 
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const babelConf = require('./babel.config');
 
 const multi = require('./util/entries');
@@ -16,17 +18,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: babelConf.presets.concat(['react']),
-                        plugins: babelConf.plugins
-                    }
-                }
-            },
-            {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
+                // exclude: /node_modules/,
+                exclude: /node_modules(?!\/webpack-dev-server)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -57,6 +51,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.less', '.css']
     },
     plugins: [
+        new BundleAnalyzerPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new CommonsChunkPlugin({

@@ -1,32 +1,61 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { LocaleProvider, DatePicker, message } from 'antd';
+// import { LocaleProvider, DatePicker, message, Table } from 'antd';
+// // 由于 antd 组件的默认文案是英文，所以需要修改为中文
+// import zhCN from 'antd/lib/locale-provider/zh_CN';
+import {Button} from 'antd';
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文
-import zhCN from 'antd/lib/locale-provider/zh_CN';
-import moment from 'moment';
-import 'moment/locale/zh-cn';
 
-moment.locale('zh-cn');
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             date: '',
+            petType: 'cat'
         };
     }
-    handleChange(date) {
-        message.info('您选择的日期是: ' + date.toString());
-        this.setState({ date });
+    getRowClassName(record) {
+        if (record.age > 40) {
+            return 'warn'
+        }
+        return 'success';
     }
     render() {
+        const dataSource = [{
+            key: '1',
+            name: '胡彦斌',
+            age: 32,
+            address: '西湖区湖底公园1号'
+        }, {
+            key: '2',
+            name: '胡彦祖',
+            age: 42,
+            address: '西湖区湖底公园1号'
+        }];
+
+        const columns = [{
+            title: '姓名',
+            dataIndex: 'name',
+            key: 'name',
+        }, {
+            title: '年龄',
+            dataIndex: 'age',
+            key: 'age'
+        }, {
+            title: '住址',
+            dataIndex: 'address',
+            key: 'address',
+        }];
         return (
-            <LocaleProvider locale={zhCN}>
-                <div style={{ width: 400, margin: '100px auto' }}>
-                    <DatePicker onChange={value => this.handleChange(value)} />
-                    <div style={{ marginTop: 20 }}>当前日期：{this.state.date.toString()}</div>
+            <div style={{ width: 400, margin: '100px auto' }}>
+                <div>
+                    <Button type="primary">Primary</Button>
+                    <Button>Default</Button>
+                    <Button type="dashed">Dashed</Button>
+                    <Button type="danger">Danger</Button>
                 </div>
-            </LocaleProvider>
+            </div>
         );
     }
 }
